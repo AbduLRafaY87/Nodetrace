@@ -1,0 +1,65 @@
+{
+  "name": "nodetrace",
+  "displayName": "Nodetrace",
+  "description": "Trace how your code connects — structure, symbols, and dead code",
+  "version": "0.2.0",
+  "icon": "images/icon.png",
+  "publisher": "abdulrafayvscodeextension",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbduLRafaY87/Nodetrace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbduLRafaY87/Nodetrace/issues"
+  },
+  "homepage": "https://github.com/AbduLRafaY87/Nodetrace",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nodetrace.analyzeCodebase",
+        "title": "Analyze Codebase",
+        "category": "Nodetrace"
+      },
+      {
+        "command": "nodetrace.findDeadCode",
+        "title": "Find Dead Code",
+        "category": "Nodetrace"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.125.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.3",
+    "ignore": "^7.0.6"
+  }
+}
