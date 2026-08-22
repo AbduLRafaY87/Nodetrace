@@ -2,7 +2,7 @@
   "name": "nodetrace",
   "displayName": "Nodetrace",
   "description": "Trace how your code connects — structure, symbols, and dead code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "images/icon.png",
   "publisher": "abdulrafayvscodeextension",
   "license": "MIT",
