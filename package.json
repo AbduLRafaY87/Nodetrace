@@ -37,10 +37,11 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
+    "vscode:prepublish": "node esbuild.js --minify",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "check-types": "tsc --noEmit -p ./",
+    "pretest": "npm run compile && npm run check-types && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
   },
@@ -50,16 +51,15 @@
     "@types/vscode": "^1.125.0",
     "@vscode/test-cli": "^0.0.15",
     "@vscode/test-electron": "^3.0.0",
+    "esbuild": "^0.28.2",
     "eslint": "^10.5.0",
+    "fast-glob": "^3.3.3",
+    "ignore": "^7.0.6",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.61.1"
   },
   "overrides": {
     "diff": "^8.0.4",
     "serialize-javascript": "^7.0.6"
-  },
-  "dependencies": {
-    "fast-glob": "^3.3.3",
-    "ignore": "^7.0.6"
   }
 }
